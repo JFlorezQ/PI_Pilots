@@ -2,7 +2,7 @@
 
 const server = require("./src/server")
 
-//establecemos en que puerto se debe levantar el servidor
+//establecemos en que puerto se debe levantar el servidor.
 
 const PORT = 8080
 
