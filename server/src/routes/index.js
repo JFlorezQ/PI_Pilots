@@ -3,32 +3,26 @@
 // Importar todos los routers
 const { Router } = require('express');
 const router = Router();
-const {getpokemon} = require('../controllers/getpokemon')
-const {getpokemonbyid} = require('../controllers/getpokemonbyid')
-const {getpokemonbyname} = require ('../controllers/getpokemonbyname')
-const {getpokemonbytype} = require ('../controllers/getpokemonbytype')
-const {postpokemon} = require('../controllers/postpokemon')
+const { getDrivers } = require('../controllers/getdrivers');
+const { getDriverById } = require('../controllers/getdriversbyid');
+const { getDriverByName } = require("../controllers/getdriversbyname")
+
+
 
 // Estos son handlers
 
 // GET | /drivers
 
-router.get("/drivers", (req,res) =>{getdrivers(req, res)})
+router.get("/drivers", (req,res) =>{getDrivers(req, res)})
 
-//GET | /pokemons/: idPokemon 
+// GET | /drivers/:id
 
-router.get("/pokemons/:idPokemon",(req,res) =>{getpokemonbyid(req, res)})
+router.get("/drivers/:id", (req,res) =>{getDriverById(req, res)})
 
-// GET | /pokemons/name ?= "..."
+//GET | /drivers/name?="..."
 
-router.get("/pokemons/name?=''",(req,res) =>{getpokemonbyname(req, res)})
-
-// GET | /types
-
-router.get("/types",(req,res) =>{getpokemonbytype(req, res)})
-
-// POST | /pokemons
-
-router.post("/pokemons", (req,res) =>{postpokemon(req, res)})
+router.get("/drivers/search/name", (req,res) =>{getDriverByName(req, res)})
 
 module.exports = router;
+
+
