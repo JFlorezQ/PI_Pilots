@@ -24,7 +24,7 @@ const getDrivers = async (req,res)=>{
         const driversAPI = apiDrivers.map((driver) => ({
             image: driver.image ||'../Images/Defaultimage.png',
             // Verificar que haya recibido el objeto de nombre para ir hasta su primer nombre
-            name: driver.name ? driver.name.forename : 'Conductor sin nombre', 
+            name: driver.name ?`${driver.name.forename} ${driver.name.surname}`: 'Conductor sin nombre', 
             team: driver.teams || "Conductor sin Equipo"}));
         
         //Recuperar datos de la DB
@@ -37,7 +37,7 @@ const getDrivers = async (req,res)=>{
         
         const driversDatabase = databaseDrivers.map((driver) => ({
             image: driver.image ||'../Images/Defaultimage.png',
-            name: driver.name || 'Conductor sin nombre',
+            name: `${driver.name.forename} ${driver.name.surname}` || 'Conductor sin nombre',
             team: driver.team || 'Conductor sin equipo'}));
             
         
