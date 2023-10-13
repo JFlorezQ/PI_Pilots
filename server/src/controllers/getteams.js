@@ -9,7 +9,13 @@ const URL = `http://localhost:5000/drivers`
 
 const getteams = async (req, res) => {
   try {
-    const { data } = await axios(URL);
+
+    const count = await Team.count();
+
+    //si la base de datos se encuentra vacía traemos los datos de la API
+
+    if(count== 0){
+        const { data } = await axios(URL);
 
     if (!data) {
       throw new Error('Faltan datos de la API');
@@ -45,6 +51,8 @@ const getteams = async (req, res) => {
     if(!uniqueTeams) throw new Error ("Falló al eliminar los repetidos")
 
     console.log("ya obtuvo el arreglo de equipos unicos")
+  
+
 
     //Ahora se deben enviar los equipos a la base de datos
 
@@ -53,7 +61,7 @@ const getteams = async (req, res) => {
     await Team.bulkCreate(uniqueTeams.map((teamName) => ({ name: teamName }))
     );
          
-     console.log('Equipos insertados en la base de datos.')
+     console.log('Equipos insertados en la base de datos.')}
     
     
     // Se recuperan los datos de la base de datos
