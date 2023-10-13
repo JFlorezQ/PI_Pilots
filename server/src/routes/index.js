@@ -7,6 +7,7 @@ const { getDrivers } = require('../controllers/getdrivers');
 const { getDriverById } = require('../controllers/getdriversbyid');
 const { getDriverByName } = require("../controllers/getdriversbyname");
 const { getteams } = require('../controllers/getteams');
+const {postDrivers} = require('../controllers/postdrivers')
 
 
 

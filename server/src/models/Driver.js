@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes, UUIDV4 } = require('sequelize');
 
 // Exportamos una función que define el modelo
 // Luego le inyectamos la conexión a sequelize.
@@ -7,6 +7,7 @@ module.exports = (sequelize) => {
   const Driver = sequelize.define('Driver', {
     id: {
       type: DataTypes.UUID,
+      defaultValue: UUIDV4,
       allowNull: false,
       primaryKey: true
     },
@@ -33,7 +34,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    dob: {
+    dob: { 
       type: DataTypes.DATEONLY,
       allowNull: false
     }
