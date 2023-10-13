@@ -5,7 +5,7 @@ const {conn} = require("./src/db")
 
 //establecemos en que puerto se debe levantar el servidor.
 
-const PORT = 1027
+const PORT = 1029
 
 server.listen( PORT, ()=>{
   conn.sync({force: true})
