@@ -83,3 +83,4 @@ const getteams = async (req, res) => {
 };
 
 module.exports = { getteams };
+

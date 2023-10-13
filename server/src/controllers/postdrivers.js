@@ -20,10 +20,28 @@ const postDrivers = async (req,res) => {
                 nationality: nationality, 
                 dob: dob
               });
-          
-              // Relaciona el conductor con los equipos proporcionados
-              await newDriver.setTeams(teams);
-          
+        
+
+        //a partir del dato enviado en el body, recuperamos la PK del equipo
+ // Buscar la clave primaria (id) del equipo
+ const nombreEquipoBuscado = teams; // Reemplaza con el nombre que estás buscando
+
+ Team.findOne({
+   where: {
+     name: nombreEquipoBuscado,
+   },
+ })
+   .then((equipoEncontrado) => {
+     if (equipoEncontrado) {
+       const foreingKey = equipoEncontrado.id;
+       console.log(foreingKey);
+
+       // Relaciona el conductor con los equipos proporcionados
+       newDriver.addTeam(foreingKey);}})
+
+   
+
+        
               return res.status(201).json({ message: 'Conductor creado con éxito' });
     } catch (error) {
         return res.status(500).json({ error: error.message });
@@ -33,3 +51,6 @@ const postDrivers = async (req,res) => {
 module.exports = {
     postDrivers
 }
+
+
+
