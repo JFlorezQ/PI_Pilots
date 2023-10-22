@@ -2,7 +2,12 @@ import './Searchbar.css';
 
 function Searchbar() {
   return (
-    <h1> Este es mi Searchbar </h1>
+    <div>
+      <form>
+        <input placeholder='Búsqueda'/>
+        <button> Buscar </button>
+      </form>
+    </div>
   )
 }
 

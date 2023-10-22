@@ -1,8 +1,14 @@
 import './Cards.css';
+import Card from '../Card/Card'
 
 function Cards() {
   return (
-    <h1> Este es mi Cards </h1>
+    <div>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+    </div>
   )
 }
 

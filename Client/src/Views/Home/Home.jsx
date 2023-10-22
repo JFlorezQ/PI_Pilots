@@ -1,8 +1,12 @@
 import './Home.css';
+import Cards from '../../Components/Cards/Cards';
 
 function Home() {
   return (
-    <h1> Este es mi Home </h1>
+    <div>
+     
+      <Cards/>
+    </div>
   )
 }
 
