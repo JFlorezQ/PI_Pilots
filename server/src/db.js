@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Configura la conexión a la base de datos utilizando las variables de entorno
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`, {
+const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:5432/${DB_NAME}`, {
   logging: false,
   native: false,
 });
