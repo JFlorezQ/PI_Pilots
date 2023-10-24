@@ -1,13 +1,13 @@
 import './Cards.css';
 import Card from '../Card/Card'
 
-function Cards() {
+function Cards({allDrivers}) {
+
+  const driversList= allDrivers
   return (
-    <div>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
+    <div className='cards'>
+      {driversList?.map(driver=>
+        <Card driver={driver}/>)}
     </div>
   )
 }

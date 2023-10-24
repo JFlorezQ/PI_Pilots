@@ -1,11 +1,16 @@
 import './Card.css';
+import {NavLink } from "react-router-dom";
 
-function Card() {
+function Card({driver}) {
+  const{name, team, image, id} = driver
   return (
-    <div>
-    <h1> Nombre: </h1>
-    <h2> Edad: </h2>
-    <h2> Imagen</h2>
+    <div className='cardcontainer'>
+      <NavLink to={`/detail/${id}`} >
+        <img src={image?.url} alt={name} />
+        <h1> Nombre: {name}  </h1>
+        <h2> Equipo: {team} </h2>
+        <p>id {id}</p>
+        </NavLink>
     </div>
   )
 }

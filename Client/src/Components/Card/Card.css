@@ -1,0 +1,15 @@
+.cardcontainer {
+    width: 300px; /* Ancho del contenedor */
+    border: 2px solid black; /* Borde de 2px en color negro */
+    border-radius: 10px; /* Esquinas curvadas */
+    text-align: center; /* Alineación del texto en el centro */
+    color: black; /* Texto en color negro */
+    padding: 10px; /* Espacio interno alrededor del contenido */
+  }
+  
+  .cardcontainer img {
+    width: 100%; /* La imagen ocupará el 100% del ancho del contenedor */
+    height: auto; /* Mantendrá la proporción original de la imagen */
+    border-radius: 10px; /* Esquinas curvadas para la imagen */
+  }
+  

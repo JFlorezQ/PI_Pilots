@@ -48,6 +48,7 @@ const getDriverByName = async (req, res) => {
     }
 
     const driversName = first15MatchingDrivers.map((driver) => ({
+      id: driver.id,
       image: driver.image || '../Images/Defaultimage.png',
       name: `${driver.name.forename} ${driver.name.surname}`,
       team: driver.teams || [], 
