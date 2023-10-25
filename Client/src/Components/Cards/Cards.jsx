@@ -1,9 +1,9 @@
 import './Cards.css';
 import Card from '../Card/Card'
 
-function Cards({allDrivers}) {
+function Cards({currentDrivers}) {
 
-  const driversList= allDrivers
+  const driversList= currentDrivers
   return (
     <div className='cards'>
       {driversList?.map(driver=>

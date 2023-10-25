@@ -1,9 +1,17 @@
 import './Create.css';
+import Form from '../../Components/Form/Form'
+
 
 function Create() {
+    
   return (
-    <h1> Este es mi Create </h1>
-  )
-}
+    
+        <div>
+          <h1>Este es mi create</h1>
+          <Form/>
+        </div>
+    )
+ }
+
 
 export default Create;
